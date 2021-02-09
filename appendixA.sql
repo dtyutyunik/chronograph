@@ -1,7 +1,10 @@
-1) select id from Document 
-   where Document.id not in 
-        (select document_id from Page
-         where Page.document_id = Document.id)
+1) 
+select id 
+from Document
+    left outter join Page
+    on Document.id= Page.document_id
+where Page.id = null
+
 
 
 2) select title, page_cnt
